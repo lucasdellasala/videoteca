@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Helmet } from 'react-helmet';
 import './App.css';
+import { config } from './config/config';
+import SearchBar from './components/searchBar/SearchBar';
+
 
 function App() {
   return (
     <div className="App">
+      <Helmet>
+        <title>{config.app_title}</title>
+      </Helmet>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>{config.app_title}</h1>
+        <SearchBar/>
       </header>
     </div>
-  );
+  );  
 }
 
 export default App;
